@@ -9,6 +9,11 @@ import (
 	"syscall"
 )
 
+var (
+	ext_name = filepath.Base(os.Args[0])
+	ext_cli = extension.NewClient(os.Getenv("AWS_LAMBDA_RUNTIME_API"))
+	print_pref = fmt.Sprintf("[%s]", extensionName)
+)
 
 func main() {
    fmt.Println("hello world")
